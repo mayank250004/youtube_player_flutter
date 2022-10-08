@@ -86,13 +86,6 @@ class _LiveBottomBarState extends State<LiveBottomBar> {
               child: Slider(
                 value: (_currentSliderPosition>1)?1:_currentSliderPosition,
                 onChanged: (value) {
-                  final calc=  (_controller.metadata.duration.inMilliseconds * value)
-                      .round();
-                  print("Msconfig $calc");
-                  if(calc<0||calc>1)
-                  {
-                    return;
-                  }
                   _controller.seekTo(
                     Duration(
                       milliseconds:
