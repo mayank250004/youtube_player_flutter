@@ -84,7 +84,7 @@ class _LiveBottomBarState extends State<LiveBottomBar> {
           Expanded(
             child: Padding(
               child: Slider(
-                value: (_currentSliderPosition<0||_currentSliderPosition>1)?0:_currentSliderPosition,
+                value: (_currentSliderPosition>1)?1:_currentSliderPosition,
                 onChanged: (value) {
                   final calc=  (_controller.metadata.duration.inMilliseconds * value)
                       .round();
