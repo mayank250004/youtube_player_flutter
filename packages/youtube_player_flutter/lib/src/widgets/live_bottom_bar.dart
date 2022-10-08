@@ -84,12 +84,12 @@ class _LiveBottomBarState extends State<LiveBottomBar> {
           Expanded(
             child: Padding(
               child: Slider(
-                value: _currentSliderPosition,
+                value: (_currentSliderPosition<0||_currentSliderPosition>1)?0:_currentSliderPosition,
                 onChanged: (value) {
                   final calc=  (_controller.metadata.duration.inMilliseconds * value)
                       .round();
                   print("Msconfig $calc");
-                  if(calc<=0||calc>=1)
+                  if(calc<0||calc>1)
                   {
                     return;
                   }
